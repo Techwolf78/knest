@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import './app.css';
+import './App.css';
 import './index.css';
 
 function App() {
