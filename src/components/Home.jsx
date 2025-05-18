@@ -16,67 +16,68 @@ const Home = () => {
       <Sidebar />
       <div className="max-w-4xl mx-auto px-6 space-y-12 ">
         {/* Hero */}
-        <motion.section
-          id="Hero"
-          className="h-screen flex flex-col justify-center items-center text-center space-y-6"
-          {...fadeIn()}
-        >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
-            Your Mind, Supercharged
-          </h1>
-          <p className="text-lg text-gray-400 max-w-xl">
-            Knest is your AI-powered second brain — designed to remember,
-            remind, and organize what actually matters.
-          </p>
-          <div className="flex space-x-4">
-            <button className="backdrop-blur-md bg-white/10 border border-white/20 px-8 py-3 rounded-full text-lg font-medium hover:bg-white/20 transition">
-              Join the Waitlist
-            </button>
-            <button className="backdrop-blur-md bg-transparent border border-white/20 px-8 py-3 rounded-full text-lg font-medium hover:bg-white/20 transition">
-              Learn More
-            </button>
-          </div>
-        </motion.section>
+<motion.section
+  id="Hero"
+  className="h-screen flex flex-col justify-center items-center text-center space-y-6 px-4 sm:px-8"
+  {...fadeIn()}
+>
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
+    Your Mind, Supercharged
+  </h1>
+  <p className="text-base sm:text-lg text-gray-400 max-w-xl">
+    Knest is your AI-powered second brain — designed to remember,
+    remind, and organize what actually matters.
+  </p>
+  <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+    <button className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition">
+      Join the Waitlist
+    </button>
+    <button className="backdrop-blur-md bg-transparent border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition">
+      Learn More
+    </button>
+  </div>
+</motion.section>
 
-        {/* Features */}
-        <motion.section
-          id="Features"
-          className="h-screen flex flex-col justify-center text-center space-y-12"
-          {...fadeIn(0.2)}
-        >
-          <h2 className="text-4xl font-bold">
-            Tired of juggling ten apps and forgetting everything anyway?
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-10 text-left text-gray-400">
-            {[
-              [
-                "Notes in One App",
-                "Keep all your notes in one place for easy access and organization.",
-              ],
-              [
-                "Habits in Another",
-                "Track and manage your habits in a separate, dedicated space.",
-              ],
-              [
-                "Daily Plans Forgotten",
-                "Easily schedule and manage your day without forgetting important tasks.",
-              ],
-              [
-                "Mind Like a Maze",
-                "Navigate through your thoughts and tasks with clear structure and simplicity.",
-              ],
-            ].map(([title, desc], i) => (
-              <motion.div
-                key={i}
-                className="bg-white/5 p-6 rounded-lg hover:scale-105 transition"
-                {...fadeIn(i * 0.1)}
-              >
-                <h3 className="text-xl text-white font-semibold">{title}</h3>
-                <p className="text-sm mt-2">{desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+
+<motion.section
+  id="Features"
+  className="h-auto sm:h-screen flex flex-col justify-center text-center space-y-12 px-4 sm:px-8"
+  {...fadeIn(0.2)}
+>
+  <h2 className="text-3xl sm:text-4xl font-bold">
+    Tired of juggling ten apps and forgetting everything anyway?
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 text-left text-gray-400">
+    {[
+      [
+        "Notes in One App",
+        "Keep all your notes in one place for easy access and organization.",
+      ],
+      [
+        "Habits in Another",
+        "Track and manage your habits in a separate, dedicated space.",
+      ],
+      [
+        "Daily Plans Forgotten",
+        "Easily schedule and manage your day without forgetting important tasks.",
+      ],
+      [
+        "Mind Like a Maze",
+        "Navigate through your thoughts and tasks with clear structure and simplicity.",
+      ],
+    ].map(([title, desc], i) => (
+      <motion.div
+        key={i}
+        className="bg-white/5 p-6 rounded-lg hover:scale-105 transition"
+        {...fadeIn(i * 0.1)}
+      >
+        <h3 className="text-lg sm:text-xl text-white font-semibold">{title}</h3>
+        <p className="text-sm mt-2">{desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
+
 
         {/* Use Cases */}
         <motion.section
