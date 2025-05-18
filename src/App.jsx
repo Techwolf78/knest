@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative bg-black min-h-screen text-white">
+    <div className="relative bg-navy min-h-screen text-white">
       {/* Only show Navbar on mobile, and not if Sidebar is shown */}
       {isMobile && !showMenu && <Navbar setShowMenu={setShowMenu} showMenu={showMenu} />}
 
