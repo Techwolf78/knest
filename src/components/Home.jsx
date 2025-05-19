@@ -29,12 +29,20 @@ const Home = () => {
     remind, and organize what actually matters.
   </p>
   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-    <button className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition">
-      Join the Waitlist
-    </button>
-    <button className="backdrop-blur-md bg-transparent border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition">
-      Learn More
-    </button>
+<button
+  onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
+  className="backdrop-blur-md bg-white/10 border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition"
+>
+  Join the Waitlist
+</button>
+
+<button
+  onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
+  className="backdrop-blur-md bg-transparent border border-white/20 px-6 py-3 rounded-full text-base sm:text-lg font-medium hover:bg-white/20 transition"
+>
+  Learn More
+</button>
+
   </div>
 </motion.section>
 
@@ -119,11 +127,12 @@ const Home = () => {
         </motion.section>
 
         {/* How It Works */}
-        <motion.section
-          id="How It Works"
-          className="min-h-screen flex flex-col justify-center items-center px-6"
-          {...fadeIn(0.4)}
-        >
+<motion.section
+  id="how-it-works"
+  className="min-h-screen flex flex-col justify-center items-center px-6"
+  {...fadeIn(0.4)}
+>
+
           <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-16 w-full max-w-6xl">
@@ -274,7 +283,7 @@ const Home = () => {
           {...fadeIn(0.6)}
         >
           {/* FORM */}
-          <div className="w-full max-w-4xl bg-white/5 p-8 rounded-lg backdrop-blur-md shadow-md space-y-8 text-left">
+<div id="waitlist-form" className="w-full max-w-4xl bg-white/5 p-8 rounded-lg backdrop-blur-md shadow-md space-y-8 text-left">
             <h3 className="text-2xl font-bold text-white text-center">
               Join Our Early Community
             </h3>
@@ -367,7 +376,7 @@ const Home = () => {
           className="text-center text-gray-600 text-xs pb-10"
           {...fadeIn(0.7)}
         >
-          © {new Date().getFullYear()} YourBrand — All rights reserved.
+          © {new Date().getFullYear()} Knest — All rights reserved.
         </motion.footer>
       </div>
     </div>
