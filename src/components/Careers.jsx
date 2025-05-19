@@ -63,8 +63,12 @@ const Careers = () => {
     <div className="bg-black text-white min-h-screen">
       <Navbar showMenu={false} setShowMenu={() => {}} />
 
-      {/* Home Button (top-left) */}
-      <div className="max-w-6xl mx-auto px-6 pt-6">
+
+
+      {/* Main Content */}
+      <main className="max-w-6xl mx-auto px-6 pt-32 pb-20">
+              {/* Home Button (top-left) */}
+      <div className="max-w-6xl mx-auto cursor-pointer py-6">
         <button
           onClick={() => navigate('/')}  // Navigates to home
           className="text-sm text-gray-400 hover:text-white transition flex items-center space-x-1"
@@ -73,9 +77,6 @@ const Careers = () => {
           <span>Home</span>
         </button>
       </div>
-
-      {/* Main Content */}
-      <main className="max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Hero Section */}
         <motion.section {...fadeIn(0)}>
           <h1 className="text-5xl font-bold mb-4">We're Hiring</h1>

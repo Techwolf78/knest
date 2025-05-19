@@ -2,6 +2,9 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import { motion } from "framer-motion";
+import { FiZap, FiSearch, FiMessageCircle, FiUsers } from "react-icons/fi"; // Feather Icons
+import { FiCpu, FiSmile, FiLayers } from "react-icons/fi";
+
 
 const fadeIn = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -239,42 +242,41 @@ const Home = () => {
           </div>
 
           {/* Why Knest is Different Section */}
-          <div className="w-full max-w-6xl mt-16">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Why Knest is Different
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8 text-left">
-              {[
-                {
-                  title: "Human-First Intelligence",
-                  desc: "AI that adapts to your thought patterns and workflows — not the other way around.",
-                  icon: "🧠",
-                },
-                {
-                  title: "Zero Learning Curve",
-                  desc: "Works the way you already think. No complex systems to learn or maintain.",
-                  icon: "⚡",
-                },
-                {
-                  title: "All-In-One Brain",
-                  desc: "Calendar, notes, to-do, reminders, journaling — all in one place.",
-                  icon: "🧩",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white/5 p-6 rounded-xl hover:ring-1 hover:ring-white/10 transition"
-                  {...fadeIn(i * 0.1)}
-                >
-                  <div className="text-3xl mb-4">{item.icon}</div>
-                  <h3 className="text-white text-lg font-semibold mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+<div className="w-full max-w-6xl mt-16">
+  <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-10">
+    Why Knest is Different
+  </h2>
+
+  <div className="grid md:grid-cols-3 gap-8 text-left">
+    {[
+      {
+        icon: <FiCpu className="text-white text-3xl" />,
+        title: "Human-First Intelligence",
+        desc: "AI that learns from you — your patterns, rhythms, and priorities — instead of forcing a new system.",
+      },
+      {
+        icon: <FiSmile className="text-white text-3xl" />,
+        title: "Zero Learning Curve",
+        desc: "Designed for real people. Knest works how your brain already does — no setup, no jargon.",
+      },
+      {
+        icon: <FiLayers className="text-white text-3xl" />,
+        title: "All-in-One Mental Stack",
+        desc: "Notes, planner, habits, reminders, and journaling — all in one intuitive system.",
+      },
+    ].map(({ icon, title, desc }, i) => (
+      <motion.div
+        key={i}
+        className="bg-white/5 p-6 rounded-xl hover:ring-1 hover:ring-white/10 transition shadow-sm hover:shadow-md"
+        {...fadeIn(i * 0.1)}
+      >
+        <div className="mb-4">{icon}</div>
+        <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
+        <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</div>
         </motion.section>
 
         <motion.section
@@ -344,28 +346,45 @@ const Home = () => {
           </div>
 
           {/* COMMUNITY BENEFITS - IMPROVED UI */}
-          <div className="w-full max-w-5xl mt-10">
-            <h3 className="text-white text-xl font-semibold text-center mb-6">
-              Community Benefits
-            </h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
-              {[
-                ["🚀", "Early access to Knest features"],
-                ["🔍", "Sneak peeks at upcoming features"],
-                ["🗣️", "Direct influence on product development"],
-                ["💬", "Join our Discord or WhatsApp community"],
-              ].map(([icon, text], i) => (
-                <motion.div
-                  key={i}
-                  className="bg-white/5 p-4 rounded-md flex items-start space-x-3 hover:ring-1 hover:ring-white/10 transition"
-                  {...fadeIn(i * 0.1)}
-                >
-                  <div className="text-2xl">{icon}</div>
-                  <p className="text-sm text-gray-300">{text}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+<motion.section
+  id="community-benefits"
+  className="w-full max-w-5xl mt-20 mx-auto"
+  {...fadeIn(0.65)}
+>
+  <h3 className="text-white text-2xl font-bold text-center mb-8">
+    Community Benefits
+  </h3>
+
+  <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-left">
+    {[
+      {
+        icon: <FiZap className="text-white text-2xl" />,
+        text: "Early access to Knest features",
+      },
+      {
+        icon: <FiSearch className="text-white text-2xl" />,
+        text: "Sneak peeks at upcoming tools",
+      },
+      {
+        icon: <FiMessageCircle className="text-white text-2xl" />,
+        text: "Help shape the product with feedback",
+      },
+      {
+        icon: <FiUsers className="text-white text-2xl" />,
+        text: "Join our private Discord community",
+      },
+    ].map(({ icon, text }, i) => (
+      <motion.div
+        key={i}
+        className="bg-white/5 p-5 rounded-md flex items-start space-x-4 hover:ring-1 hover:ring-white/10 transition"
+        {...fadeIn(i * 0.1)}
+      >
+        <div className="shrink-0">{icon}</div>
+        <p className="text-sm text-gray-300">{text}</p>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
         </motion.section>
 
         {/* Footer padding spacer */}
