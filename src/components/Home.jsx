@@ -4,6 +4,12 @@ import Navbar from "./Navbar";
 import { motion } from "framer-motion";
 import { FiZap, FiSearch, FiMessageCircle, FiUsers } from "react-icons/fi"; // Feather Icons
 import { FiCpu, FiSmile, FiLayers } from "react-icons/fi";
+import {
+  FiBookmark,
+  FiClock,
+  FiCalendar,
+  FiLink,
+} from "react-icons/fi";
 
 
 const fadeIn = (delay = 0) => ({
@@ -132,70 +138,68 @@ const Home = () => {
         {/* How It Works */}
 <motion.section
   id="how-it-works"
-  className="min-h-screen flex flex-col justify-center items-center px-6"
+  className="min-h-screen flex flex-col justify-center items-center px-6 py-20 sm:py-32"
   {...fadeIn(0.4)}
 >
+  <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 text-white">
+    How It Works
+  </h2>
 
-          <h2 className="text-4xl font-bold text-center mb-12">How It Works</h2>
-
-          <div className="flex flex-col md:flex-row items-center justify-center gap-16 w-full max-w-6xl">
-            {/* Left - Features */}
-            <div className="flex-1 space-y-8">
-              {[
-                {
-                  title: "Supermemory",
-                  description:
-                    "Save anything. Knest remembers not just what, but why.",
-                  icon: "🧠",
-                },
-                {
-                  title: "Smart Habit Tracker",
-                  description:
-                    "Alarms, nudges, and accountability designed around your brain.",
-                  icon: "⏰",
-                },
-                {
-                  title: "AI Daily Planner",
-                  description:
-                    "Auto-generates your to-do list based on context, priority, and energy.",
-                  icon: "📅",
-                },
-                {
-                  title: "Connected Thinking",
-                  description:
-                    "Link ideas, tasks, and notes fluidly like your brain does.",
-                  icon: "🔗",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  className="flex items-start space-x-4"
-                  {...fadeIn(i * 0.1)}
-                >
-                  <div className="text-3xl">{item.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mt-1">
-                      {item.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Right - Transparent Image */}
-            <motion.div className="flex-1 w-full max-w-md" {...fadeIn(0.5)}>
-              <img
-                src="/sys.png"
-                alt="System Diagram"
-                className="w-full h-auto object-contain"
-                style={{ background: "transparent" }}
-              />
-            </motion.div>
+  <div className="flex flex-col md:flex-row items-center justify-center gap-16 w-full max-w-6xl">
+    {/* Left - Feature Steps */}
+    <div className="flex-1 space-y-10">
+      {[
+        {
+          title: "Supermemory",
+          description: "Capture anything — ideas, tasks, links. Knest remembers the why, not just the what.",
+          icon: <FiBookmark className="text-3xl text-white" />,
+        },
+        {
+          title: "Smart Habit Tracker",
+          description: "Stay consistent with nudges, alarms, and adaptive reminders that evolve with you.",
+          icon: <FiClock className="text-3xl text-white" />,
+        },
+        {
+          title: "AI Daily Planner",
+          description: "Generate your daily plan automatically — optimized for energy, context, and urgency.",
+          icon: <FiCalendar className="text-3xl text-white" />,
+        },
+        {
+          title: "Connected Thinking",
+          description: "Link notes, ideas, and tasks like a neural network. Your thoughts, mapped clearly.",
+          icon: <FiLink className="text-3xl text-white" />,
+        },
+      ].map(({ icon, title, description }, i) => (
+        <motion.div
+          key={i}
+          className="flex items-start space-x-5"
+          {...fadeIn(i * 0.1)}
+        >
+          <div className="shrink-0 mt-1">{icon}</div>
+          <div>
+            <h3 className="text-lg sm:text-xl font-semibold text-white">
+              {title}
+            </h3>
+            <p className="text-sm text-gray-400 mt-1 leading-relaxed">
+              {description}
+            </p>
           </div>
-        </motion.section>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Right - Image */}
+    <motion.div className="flex-1 w-full max-w-md" {...fadeIn(0.5)}>
+      <div className="relative w-full h-auto rounded-lg overflow-hidden shadow-lg">
+        <img
+          src="/sys.png"
+          alt="System Diagram"
+          className="w-full h-auto object-contain rounded-md"
+        />
+      </div>
+    </motion.div>
+  </div>
+</motion.section>
 
         <motion.section
           id="Testimonials"
