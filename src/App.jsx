@@ -1,3 +1,4 @@
+
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
@@ -25,16 +26,17 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="relative bg-black min-h-screen text-white">
-      {isMobile && !showMenu && location.pathname === '/' && (
-        <Navbar setShowMenu={setShowMenu} showMenu={showMenu} />
-      )}
-      {!isMobile && location.pathname === '/' && <Sidebar />}
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/careers" element={<Careers />} />
-      </Routes>
+
+    <div className="relative bg-navy min-h-screen text-white">
+      {/* Only show Navbar on mobile, and not if Sidebar is shown */}
+      {isMobile && !showMenu && <Navbar setShowMenu={setShowMenu} showMenu={showMenu} />}
+
+      {/* Show Sidebar only on large screens and hide Navbar */}
+      {!isMobile && <Sidebar />}
+
+      {/* Main content */}
+      <Home />
+
     </div>
   );
 }
