@@ -18,7 +18,7 @@ Knest is an intuitive, AI-powered tool designed to help you organize and remembe
 
 ## Live Demo
 
-[Check out the live demo of Knest](#) (link to your live project)
+[Check out the live demo of Knest](https://knest-nine.vercel.app/) (link to your live project)
 
 ## Getting Started
 
